@@ -1,14 +1,21 @@
 package com.chakilo.sennenpazuru.view.base;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.WindowManager;
+import android.support.v7.widget.Toolbar;
+
+import com.chakilo.sennenpazuru.R;
+import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.ButterKnife;
 
 public abstract class ActivityBase extends AppCompatActivity {
+
+    protected Toolbar toolbar;
+
+    protected ImmersionBar mImmersionBar;
+
+    protected  boolean isWhiteTitle;                //用于判断是否是白色标题  白色标题需要状态栏字体变深色 默认字体白色
 
     @Override
     public void setContentView(int layoutResID) {
@@ -33,10 +40,30 @@ public abstract class ActivityBase extends AppCompatActivity {
      * 沉浸式状态栏
      */
     protected void immersionInit(){
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-        getWindow().setStatusBarColor(Color.TRANSPARENT);
-        getWindow().setNavigationBarColor(Color.TRANSPARENT);
+        try{
+            toolbar = findViewById(R.id.toolbar);
+        }catch (Exception e){
 
+        }
+
+        if(toolbar != null){
+            mImmersionBar = ImmersionBar.with(this).titleBar(toolbar).statusBarDarkFont(isWhiteTitle, 0.2f);
+        }else{
+            mImmersionBar = ImmersionBar.with(this).statusBarDarkFont(isWhiteTitle);
+        }
+        //在BaseActivity里初始化
+
+        mImmersionBar.init();
+
+    }
+
+    /**
+     * 透明导航栏
+     */
+    protected void transparentNavigationBar(){
+        mImmersionBar.transparentNavigationBar();
+
+        mImmersionBar.init();
     }
 
     //---------------------------------

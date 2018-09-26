@@ -16,15 +16,16 @@
 		app:contentInsetStart="0dp">
 		<RelativeLayout
 			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize">
+			android:layout_height="?attr/actionBarSize"
+			android:elevation="5dp">
 
 			<TextView
 				android:id="@+id/tvTitle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_centerVertical="true"
-				android:layout_marginLeft="16dp"
 				android:text="TITLE"
+				android:textColor="@android:color/white"
 				android:textStyle="bold"/>
 
 		</RelativeLayout>
