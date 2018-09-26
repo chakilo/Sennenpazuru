@@ -7,10 +7,12 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.chakilo.sennenpazuru.R;
+import com.chakilo.sennenpazuru.utils.BlurBitmapUtil;
 import com.chakilo.sennenpazuru.view.base.ActivityBase;
 
 import butterknife.BindView;
@@ -20,8 +22,6 @@ public class HomeActivity extends ActivityBase {
     TextView tvTitle;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.llTitle)
-    LinearLayout llTitle;
     @BindView(R.id.nav_view)
     NavigationView navView;
     @BindView(R.id.drawer_layout)
@@ -54,14 +54,14 @@ public class HomeActivity extends ActivityBase {
         toggle.syncState();
 
         //动态设置高斯模糊
-//        navView.getViewTreeObserver()
-//                .addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-//                    @Override
-//                    public boolean onPreDraw() {
-//                        BlurBitmapUtil.blur(drawerLayout, navView, 2, 4);
-//                        return true;
-//                    }
-//                });
+        navView.getViewTreeObserver()
+                .addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        BlurBitmapUtil.blur(coordinator, navView, 2, 4);
+                        return true;
+                    }
+                });
 
     }
 
