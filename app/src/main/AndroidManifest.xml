@@ -11,13 +11,13 @@
         <activity android:name=".WelcomeActivity">
         </activity>
         <activity android:name=".view.HomeActivity">
-        </activity>
-        <activity android:name=".view.CalculatorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".view.CalculatorActivity">
         </activity>
     </application>
 
