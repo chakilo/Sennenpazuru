@@ -1,4 +1,4 @@
-package com.chakilo.sennenpazuru;
+package com.jiruffe.sennenpazuru;
 
 import org.junit.Test;
 

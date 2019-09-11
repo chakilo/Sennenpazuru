@@ -1,10 +1,10 @@
-package com.chakilo.sennenpazuru.view.base;
+package com.jiruffe.sennenpazuru.view.base;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.chakilo.sennenpazuru.R;
+import com.jiruffe.sennenpazuru.R;
 import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.ButterKnife;

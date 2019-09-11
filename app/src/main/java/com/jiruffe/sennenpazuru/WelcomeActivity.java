@@ -1,4 +1,4 @@
-package com.chakilo.sennenpazuru;
+package com.jiruffe.sennenpazuru;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

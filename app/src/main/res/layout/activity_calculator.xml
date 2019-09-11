@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="p1"
+            type="com.jiruffe.sennenpazuru.model.Player" />
+
+        <variable
+            name="p2"
+            type="com.jiruffe.sennenpazuru.model.Player" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.CalculatorActivity">
 
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-        <LinearLayout
+            <LinearLayout
+                android:id="@+id/p1_area"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:orientation="vertical">
 
-            <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/ds_digit"
                     android:textSize="100sp"
-                    android:text="4123"/>
-        </LinearLayout>
+                    android:text="@{p1.lp}" />
+            </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
+                android:id="@+id/p2_area"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal|center_vertical"
                 android:orientation="vertical">
 
-            <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/ds_digit"
                     android:textSize="100sp"
-                    android:text="8000"/>
+                    android:text="@{p2.lp}" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

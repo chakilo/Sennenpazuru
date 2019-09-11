@@ -1,4 +1,4 @@
-package com.chakilo.sennenpazuru.view;
+package com.jiruffe.sennenpazuru.view;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -8,12 +8,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.ViewTreeObserver;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chakilo.sennenpazuru.R;
-import com.chakilo.sennenpazuru.utils.BlurBitmapUtil;
-import com.chakilo.sennenpazuru.view.base.ActivityBase;
+import com.jiruffe.sennenpazuru.R;
+import com.jiruffe.sennenpazuru.util.BlurBitmapUtil;
+import com.jiruffe.sennenpazuru.view.base.ActivityBase;
 
 import butterknife.BindView;
 

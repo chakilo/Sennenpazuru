@@ -1,4 +1,4 @@
-package com.chakilo.sennenpazuru.utils;
+package com.jiruffe.sennenpazuru.util;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
