@@ -1,6 +1,11 @@
 package com.jiruffe.sennenpazuru.model;
 
-public class Player {
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.android.databinding.library.baseAdapters.BR;
+
+public class Player extends BaseObservable {
 
     private int lp;
 
@@ -12,18 +17,23 @@ public class Player {
         this.lp = lp;
     }
 
+    @Bindable
     public String getLp() {
         return String.valueOf(lp);
     }
 
     public void setLp(int lp) {
         this.lp = lp;
+        notifyPropertyChanged(BR._all);
     }
 
     private void makeSureLpNotLessThanZero() {
         if (lp < 0) {
             lp = 0;
         }
+
+        // 刷新数据显示
+        notifyPropertyChanged(BR._all);
     }
 
     public void minus(int diff) {

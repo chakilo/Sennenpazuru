@@ -7,8 +7,6 @@ import android.support.v7.widget.Toolbar;
 import com.jiruffe.sennenpazuru.R;
 import com.gyf.barlibrary.ImmersionBar;
 
-import butterknife.ButterKnife;
-
 public abstract class ActivityBase extends AppCompatActivity {
 
     protected Toolbar toolbar;
@@ -20,7 +18,6 @@ public abstract class ActivityBase extends AppCompatActivity {
     @Override
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
-        ButterKnife.bind(this);
     }
 
     @Override
@@ -42,8 +39,8 @@ public abstract class ActivityBase extends AppCompatActivity {
     protected void immersionInit(){
         try{
             toolbar = findViewById(R.id.toolbar);
-        }catch (Exception e){
-
+        }catch (Exception ignore){
+            // 不处理
         }
 
         if(toolbar != null){
