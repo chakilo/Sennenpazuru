@@ -14,18 +14,12 @@ import com.jiruffe.sennenpazuru.R;
 import com.jiruffe.sennenpazuru.util.BlurBitmapUtil;
 import com.jiruffe.sennenpazuru.view.base.ActivityBase;
 
-import butterknife.BindView;
 
 public class HomeActivity extends ActivityBase {
-    @BindView(R.id.tvTitle)
     TextView tvTitle;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.nav_view)
     NavigationView navView;
-    @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
-    @BindView(R.id.coordinator)
     CoordinatorLayout coordinator;
 
 
@@ -41,6 +35,11 @@ public class HomeActivity extends ActivityBase {
 
     @Override
     protected void doInitView() {
+        tvTitle = findViewById(R.id.tvTitle);
+        toolbar = findViewById(R.id.toolbar);
+        drawerLayout = findViewById(R.id.nav_view);
+        coordinator = findViewById(R.id.coordinator);
+
         //透明导航栏
         transparentNavigationBar();
 
